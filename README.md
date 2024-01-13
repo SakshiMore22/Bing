@@ -8,15 +8,14 @@ git init
 git add .
 git commit -m "Comment here"
 git remote add origin https://github.com/YourRepoPrefixHere.git
-git push -u origin master
+git push 
 
-<!-- to merge master & main: -->
-git:(master) git branch main
-git:(master) git checkout main
-git:(main) git pull origin master
-git:(main) git checkout master
-git:(master) git pull
-
-git pull --rebase
-git push --set-upstream origin main
-git push -f origin main
+steps :
+create react app
+config tailwind
+header
+login/signup form
+body - routing
+useref hook - Form Validation
+Firebase Authentication
+Firebase Deply
