@@ -3,14 +3,13 @@ import Header from './Header'
 import {checkValidation} from '../utils/validate';
 import { createUserWithEmailAndPassword ,signInWithEmailAndPassword,updateProfile} from "firebase/auth";
 import { useState ,useRef} from 'react';
-import { useNavigate} from 'react-router-dom';
 import { auth } from '../utils/firebase';
 import { useDispatch } from 'react-redux';
 import {addUser} from '../utils/userSlice';
+import { BG_IMAGE, USER_AVTAR } from '../utils/constant';
 
 const Login = () => {
     const [isLogin,setisLogin] = useState(true);
-    const navigate= useNavigate();
     const dispatch=useDispatch();
 
     const togleSignIn=()=>{
@@ -40,7 +39,7 @@ const Login = () => {
                 .then((userCredential) => {
                   const user = userCredential.user;
                   updateProfile(user, {
-                    photoURL: "https://avatars.githubusercontent.com/u/108238805?v=4L",
+                    photoURL: USER_AVTAR,
                   })
                     .then(() => {
                       const { uid, email, photoURL } = auth.currentUser;
@@ -70,7 +69,6 @@ const Login = () => {
           )
             .then((userCredential) => {
               // Signed in
-              navigate("/browse");
             })
             .catch((error) => {
               const errorCode = error.code;
@@ -84,7 +82,7 @@ const Login = () => {
         <Header/>
         <div>
             <img className='absolute'
-            src="https://assets.nflxext.com/ffe/siteui/vlv3/b4c7f092-0488-48b7-854d-ca055a84fb4f/5b22968d-b94f-44ec-bea3-45dcf457f29e/IN-en-20231204-popsignuptwoweeks-perspective_alpha_website_medium.jpg"
+            src={BG_IMAGE}
             alt="body-bg"/>
             <form onSubmit={(e)=>e.preventDefault()}  className='h-120 w-3/12 absolute p-12 font-sans bg-black text-white my-36 mx-auto left-0 right-0 rounded-lg bg-opacity-80'>
                 <h1 className='text-3xl font-bold py-4'>

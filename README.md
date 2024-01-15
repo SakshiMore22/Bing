@@ -11,6 +11,7 @@ git remote add origin https://github.com/YourRepoPrefixHere.git
 git push 
 
 steps :
+
 create react app
 config tailwind
 header
@@ -18,4 +19,5 @@ login/signup form
 body - routing
 useref hook - Form Validation
 Firebase Authentication
-Firebase Deply
+Firebase Deploy
+Authentication routing
